@@ -50,7 +50,8 @@ class TripTicketPage extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: SizedBox(
+        child: Container(
+          margin: EdgeInsets.fromLTRB(0, 0, 0, 32),
           width: MediaQuery.of(context).size.width,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

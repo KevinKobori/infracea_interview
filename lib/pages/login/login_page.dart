@@ -8,6 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool? _showPassword = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextField(
+                keyboardType: TextInputType.number,
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   prefixIcon: Icon(
@@ -44,6 +47,7 @@ class _LoginPageState extends State<LoginPage> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextField(
+                obscureText: !_showPassword!,
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   prefixIcon: Icon(
@@ -64,11 +68,38 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(16.0),
               child: Row(
                 children: [
+                  Checkbox(
+                    value: _showPassword,
+                    onChanged: (newValue) {
+                      setState(() {
+                        _showPassword = !_showPassword!;
+                      });
+                    },
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      setState(() {
+                        _showPassword = !_showPassword!;
+                      });
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                    ),
+                    child: Text(
+                      'Mostrar senha',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
                   Spacer(),
-                  Text(
-                    'Forgot your password?',
-                    style: TextStyle(
-                      color: Colors.white,
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Forgot your password?',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],

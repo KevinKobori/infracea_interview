@@ -87,84 +87,86 @@ class _SeatsGridPageState extends State<SeatsGridPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                height: MediaQuery.of(context).size.height * 0.6,
-                margin: EdgeInsets.fromLTRB(64, 16, 64, 16),
-                child: Stack(
-                  children: [
-                    Column(
-                      children: [
-                        Spacer(),
-                        Container(
-                          height: 80,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
+              DelayedDisplay(
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.6,
+                  margin: EdgeInsets.fromLTRB(64, 16, 64, 16),
+                  child: Stack(
+                    children: [
+                      Column(
+                        children: [
+                          Spacer(),
+                          Container(
+                            height: 80,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              border: Border.all(color: veppoBlue, width: 2),
                             ),
-                            border: Border.all(color: veppoBlue, width: 2),
                           ),
-                        ),
-                        Spacer(flex: 2),
-                        Container(
-                          height: 80,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
+                          Spacer(flex: 2),
+                          Container(
+                            height: 80,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              border: Border.all(color: veppoBlue, width: 2),
                             ),
-                            border: Border.all(color: veppoBlue, width: 2),
                           ),
-                        ),
-                        Spacer(),
-                      ],
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(40),
-                        ),
-                        border: Border.all(color: veppoBlue, width: 2),
+                          Spacer(),
+                        ],
                       ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(40),
+                      Container(
+                        margin: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(40),
+                          ),
+                          border: Border.all(color: veppoBlue, width: 2),
                         ),
-                        child: GridView.count(
-                          crossAxisCount: 4,
-                          mainAxisSpacing: 0,
-                          crossAxisSpacing: 0,
-                          children: widget.flight!.seats!
-                              .asMap()
-                              .map((index, element) {
-                                return MapEntry(
-                                  index,
-                                  InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        seatSelected = index;
-                                      });
-                                    },
-                                    child: Container(
-                                      margin: EdgeInsets.all(16),
-                                      child: Image.asset(
-                                        seatSelected == index
-                                            ? 'assets/images/seats/seat_3.jpg'
-                                            : element.available!
-                                                ? 'assets/images/seats/seat_1.jpg'
-                                                : 'assets/images/seats/seat_2.jpg',
-                                        width: 28,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(40),
+                          ),
+                          child: GridView.count(
+                            crossAxisCount: 4,
+                            mainAxisSpacing: 0,
+                            crossAxisSpacing: 0,
+                            children: widget.flight!.seats!
+                                .asMap()
+                                .map((index, element) {
+                                  return MapEntry(
+                                    index,
+                                    InkWell(
+                                      onTap: () {
+                                        setState(() {
+                                          seatSelected = index;
+                                        });
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.all(16),
+                                        child: Image.asset(
+                                          seatSelected == index
+                                              ? 'assets/images/seats/seat_3.jpg'
+                                              : element.available!
+                                                  ? 'assets/images/seats/seat_1.jpg'
+                                                  : 'assets/images/seats/seat_2.jpg',
+                                          width: 28,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                );
-                              })
-                              .values
-                              .toList(),
+                                  );
+                                })
+                                .values
+                                .toList(),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Padding(

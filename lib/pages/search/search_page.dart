@@ -14,6 +14,13 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
   initState() {
     super.initState();
     _tabController = TabController(length: homeTabs.length, vsync: this);
+    _tabController!.addListener(_onTextChanged);
+  }
+
+  void _onTextChanged() {
+    setState(() {
+      tabIndex = _tabController!.index;
+    });
   }
 
   @override
@@ -54,7 +61,7 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
     return Scaffold(
       backgroundColor: veppoBlue,
       body: Padding(
-        padding: EdgeInsets.only(top: 80),
+        padding: EdgeInsets.only(top: 52),
         child: Stack(
           children: [
             Column(
@@ -125,7 +132,7 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
                                     : Container(),
                               ],
                             ),
-                            SizedBox(height: 32),
+                            Spacer(),
                             Row(
                               children: [
                                 Column(
@@ -224,11 +231,7 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
                               ],
                             ),
                             child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  changeFromTo = !changeFromTo;
-                                });
-                              },
+                              onTap: () {},
                               child: Center(
                                 child: Icon(
                                   Icons.filter_alt_outlined,

@@ -15,6 +15,12 @@ class VeppoApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         scaffoldBackgroundColor: Colors.white,
         primarySwatch: white,
+         hintColor: Colors.transparent,
+        focusColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        indicatorColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
       ),
       home: LoginPage(),
     );
