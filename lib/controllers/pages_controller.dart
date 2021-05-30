@@ -21,10 +21,14 @@ class _PagesControllerState extends State<PagesController> {
           SearchPage(),
           TripsPage(),
           Container(
-            color: veppoLightGrey,
+            child: Center(
+              child: Text('Messages'),
+            ),
           ),
           Container(
-            color: veppoLightGrey,
+            child: Center(
+              child: Text('Profile'),
+            ),
           ),
         ],
       ),
