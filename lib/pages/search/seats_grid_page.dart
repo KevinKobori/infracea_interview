@@ -68,7 +68,7 @@ class _SeatsGridPageState extends State<SeatsGridPage> {
                     ),
                     SizedBox(height: 8),
                     Text(
-                      'Total R\$49,00',
+                      'Total \$49,00',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 12,

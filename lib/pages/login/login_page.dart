@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                     Icons.contact_mail_outlined,
                     color: Colors.white,
                   ),
-                  labelText: "CPF",
+                  labelText: "SSN",
                   labelStyle: TextStyle(
                     color: Colors.white,
                   ),
@@ -86,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
                     ),
                     child: Text(
-                      'Mostrar senha',
+                      'Show Password',
                       style: TextStyle(
                         color: Colors.black,
                       ),

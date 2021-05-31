@@ -36,7 +36,7 @@ class TripTicketPage extends StatelessWidget {
                     ),
                     SizedBox(height: 8),
                     Text(
-                      'Total R\$49,00',
+                      'Total \$49,00',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 12,

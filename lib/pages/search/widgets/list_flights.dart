@@ -12,7 +12,7 @@ class ListFlights extends StatefulWidget {
 class _ListFlightsState extends State<ListFlights>
     with TickerProviderStateMixin {
   PageController _cardController = PageController(initialPage: 0);
-  List<int> passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  List<int> passengers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
   int currentPassengers = 1;
   int currentIndex = 0;
 
@@ -109,7 +109,7 @@ class _ListFlightsState extends State<ListFlights>
                           ),
                           onPressed: () {},
                           child: Text(
-                            'Selecionar data',
+                            'Select Travel date',
                             style: TextStyle(
                               color: Colors.white,
                             ),
@@ -176,7 +176,7 @@ class _ListFlightsState extends State<ListFlights>
                                 );
                               },
                               child: Text(
-                                'continuar',
+                                'next step',
                                 style: TextStyle(
                                   color: Colors.white,
                                 ),
